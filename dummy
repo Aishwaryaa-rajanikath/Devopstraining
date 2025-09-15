@@ -1,5 +1,21 @@
-a = float(input("Enter first number: "))
-b = float(input("Enter second number: "))
+import random
 
-sum_ = a + b
-print("The sum is:", sum_)
+print("Welcome to the Number Guessing Game!")
+print("I'm thinking of a number between 1 and 50.")
+
+# Generate a random number
+secret = random.randint(1, 50)
+attempts = 0
+
+while True:
+    guess = int(input("Enter your guess: "))
+    attempts += 1
+
+    if guess < secret:
+        print("Too low! Try again.")
+    elif guess > secret:
+        print("Too high! Try again.")
+    else:
+        print(f"🎉 Correct! The number was {secret}.")
+        print(f"You guessed it in {attempts} tries.")
+        break
